@@ -175,7 +175,14 @@ public final class CardHelper {
             {
                 result = 120 * (card+20) * 5;
             }
-            result = card; // Если нету никаких комбинаций, то берется самая старшая
+        }
+
+        for(int card : mapCards.keySet()) //Если нету никакой комбинации
+        {
+            if (card > result)
+            {
+                result = card;
+            }
         }
         return result;
     }
